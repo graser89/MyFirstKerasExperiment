@@ -26,10 +26,10 @@ def Estimate(Ypredict,Yfact,Vmin,Vmax):
     df1[colCount+colCount]=df1[[x for x in range(colCount,2*colCount)]].mean(axis=1)
     df1[2*colCount+1]=df1[[x for x in range(colCount,2*colCount)]].max(axis=1)
     Mape=df1[2*colCount].mean(axis=0)
-    print('Mape='+Mape)
+    print('Mape='+"%g"%Mape)
     MaxErorr=df1[2*colCount+1].max(axis=0)
-    print('MaxErorr='+MaxErorr)
-	
+    print('MaxErorr='+"%g"%MaxErorr)
+    print(df1[2*colCount+1].describe())
     plt.figure()
     plt.plot(df1[2*colCount])
     plt.plot(df1[2*colCount+1])
